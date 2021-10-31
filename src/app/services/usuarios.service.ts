@@ -22,20 +22,20 @@ export class UsuariosService {
     //   'token-usuario': 'ABC12345'
     // });
 
-    return this.http.get(`https://reqres.in/api/user`, {
+    return this.http.get(`https://reqres12.in/api/user`, {
       params
       // headers
     }).pipe(
-      map((resp: any) => resp['data']),
-      catchError(err => this.manejarError)
+      map((resp: any) => resp['data'])
+      // catchError(err => this.manejarError)
     );
   }
 
-  manejarError(error: HttpErrorResponse) {
-    console.log('Sucedio un error');
-    console.log('Registrado en el log file');
-    console.warn(error);
-    return throwError('Error personalizado');
-  }
+  // manejarError(error: HttpErrorResponse) {
+  //   console.log('Sucedio un error');
+  //   console.log('Registrado en el log file');
+  //   console.warn(error);
+  //   return throwError('Error personalizado');
+  // }
 
 }
